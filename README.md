@@ -4,6 +4,26 @@ A full-stack Mess Management System project with **Frontend (Angular)** and **Ba
 
 ---
 
+##  Prerequisites
+
+Make sure you have the following installed:
+
+* **Node.js** (v16 or higher)
+
+* **npm** (comes with Node.js)
+
+* **Angular CLI**
+
+  ```bash
+  npm install -g @angular/cli
+  ```
+
+* **MongoDB (Local Installation)**
+  Download from: https://www.mongodb.com/try/download/community
+
+
+---
+
 ##  Project Setup Instructions
 
 Follow the steps below to run the project locally.
@@ -80,4 +100,11 @@ My-Mess-repo/
 ```
 
 ---
+
+# # 🍽️ Mess Management System
+
+A full-stack Mess Management System built with **Angular (Frontend)** and **Node.js + Express (Backend)** using **MongoDB** as the database.
+
+---
+
 
