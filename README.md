@@ -1,59 +1,83 @@
-# MessManagement
+# Mess Management System
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.18.
+A full-stack Mess Management System project with **Frontend (Angular)** and **Backend (Node.js/Express)**.
 
-## Development server
+---
 
-To start a local development server, run:
+##  Project Setup Instructions
 
-```bash
-ng serve
-```
+Follow the steps below to run the project locally.
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+---
 
-## Code scaffolding
+##  Step 1: Clone the Repository
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+Copy the GitHub repository URL and run the following command in VS Code terminal:
 
 ```bash
-ng generate component component-name
+git clone https://github.com/akash20042/My-Mess-repo.git
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+---
+
+## Step 2: Navigate into Project Folder
 
 ```bash
-ng generate --help
+cd My-Mess-repo
 ```
 
-## Building
+---
 
-To build the project run:
+##   Step 3: Start Frontend (Angular)
 
 ```bash
-ng build
+cd frontend
+ng serve --open
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+👉 The frontend will run on:
 
-## Running unit tests
+```
+http://localhost:4200/
+```
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+---
+
+##  Step 4: Start Backend (Node.js)
+
+Open a new terminal and run:
 
 ```bash
-ng test
+cd backend
+npm install
+npm start
 ```
 
-## Running end-to-end tests
+ Backend will run on:
 
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
+```
+http://localhost:3000/
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+---
 
-## Additional Resources
+##  Tech Stack
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+* Frontend: Angular
+* Backend: Node.js, Express
+* Database: (Add your DB here, e.g., MongoDB / MySQL)
+
+---
+
+##  Project Structure
+
+```
+My-Mess-repo/
+│
+├── frontend/     # Angular Application
+├── backend/      # Node.js Backend
+└── README.md
+```
+
+---
+
