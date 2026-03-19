@@ -1,0 +1,297 @@
+<div class="parent">
+
+        <div class="container py-5">
+
+<h2 class="page-title">
+
+<i class="fa-solid fa-user-tie"></i>
+
+Mess Employee Management
+
+</h2>
+
+
+<div class="row g-4">
+
+ <div class="col-2">
+ <button class="btn btn-success" (click)="viewList =!viewList" > {{viewList ? 'List': 'Form'}} </button>
+ </div>
+
+<!-- Employee Registration Form -->
+
+<div *ngIf="viewList" class="col-md-8">
+
+<div class="card card-box p-4">
+
+<h5>
+
+<i class="fa-solid fa-user-plus"></i>
+
+Add Employee
+
+</h5>
+
+<hr>
+
+<form>
+
+<div class="mb-3">
+
+<label class="form-label">Name</label>
+
+<input name="name" [(ngModel)]="resgisterObj.name" type="text" class="form-control">
+
+</div>
+
+
+<div class="mb-3">
+
+<label class="form-label">Age</label>
+
+<input name="age" [(ngModel)]="resgisterObj.age" type="number" class="form-control">
+
+</div>
+
+
+<div class="mb-3">
+
+<label class="form-label">Image</label>
+
+<input name="image" [(ngModel)]="resgisterObj.image" type="text" class="form-control">
+
+</div>
+
+
+<div class="mb-3">
+
+<label class="form-label">Mess Assigned</label>
+
+<select name="mess" [(ngModel)]="resgisterObj.mess" class="form-control">
+
+<option value="Mess A" >Mess A</option>
+<option value="Mess B" >Mess B</option>
+<option value="Mess C" >Mess C</option>
+
+</select>
+
+</div>
+
+
+<div class="mb-3">
+
+<label class="form-label">
+
+Behaviour Rating (1-10)
+
+</label>
+
+<input name="behaviour" [(ngModel)]="resgisterObj.behaviour" type="range" class="form-range" min="1" max="10">
+
+</div>
+
+
+<div class="mb-3">
+
+<label class="form-label">Joining Date</label>
+
+<input name="joiningDate" [(ngModel)]="resgisterObj.joiningDate" type="date" class="form-control">
+
+</div>
+
+---{{resgisterObj.id}}
+
+@if(resgisterObj.id== ""){
+<button (click)="createEmp()" class="btn btn-primary w-100">
+
+<i class="fa fa-save"></i>
+Add Employee
+</button>
+}@else {
+
+<button (click)="UpdateEmp()" class="btn btn-primary w-100">
+
+<i class="fa fa-save"></i>
+Update Employee
+</button>
+}
+
+
+
+</form>
+
+</div>
+
+</div>
+
+
+<!-- Employee Table -->
+
+<div *ngIf="!viewList" class="col-md-9">
+
+<div class="card table-card p-4">
+
+<h5>
+
+<i class="fa-solid fa-users"></i>
+
+Employee List
+
+</h5>
+
+<hr>
+
+<table class="table table-hover">
+
+<thead>
+
+<tr>
+
+<th>Image</th>
+<th>Name</th>
+<th>Age</th>
+<th>Mess</th>
+<th>Behaviour</th>
+<th>Present</th>
+<th>Action</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr >
+
+<td>
+
+<img src="https://randomuser.me/api/portraits/men/45.jpg" class="emp-img">
+
+</td>
+
+<td>Ramesh</td>
+<td>35</td>
+<td>Mess A</td>
+
+<td>
+
+<span class="badge bg-success">9</span>
+
+</td>
+
+<td>
+
+<div class="form-check form-switch">
+
+<input class="form-check-input" type="checkbox" checked>
+
+</div>
+
+</td>
+
+<td>
+   <button  class="btn btn-sm btn-outline-primary me-2">
+    <i class="fa-solid fa-pen-to-square"></i> Edit
+  </button>
+   <button  class="btn btn-sm btn-outline-danger">
+    <i class="fa-solid fa-trash"></i> Delete
+  </button>
+
+</td>
+
+
+</tr>
+
+
+<tr>
+
+<td>
+
+<img src="https://randomuser.me/api/portraits/men/32.jpg" class="emp-img">
+
+</td>
+
+<td>Suresh</td>
+<td>40</td>
+<td>Mess B</td>
+
+<td>
+
+<span class="badge bg-warning">8</span>
+
+</td>
+
+<td>
+
+<div class="form-check form-switch">
+
+<input class="form-check-input" type="checkbox">
+
+</div>
+
+</td>
+<td>
+   <button  class="btn btn-sm btn-outline-primary me-2">
+    <i class="fa-solid fa-pen-to-square"></i> Edit
+  </button>
+   <button  class="btn btn-sm btn-outline-danger">
+    <i class="fa-solid fa-trash"></i> Delete
+  </button>
+
+</td>
+
+
+</tr>
+
+<tr *ngFor=" let emp of mydata" >
+
+<td>
+
+<img src={{emp.image}} class="emp-img">
+
+</td>
+
+<td>{{emp.name}}</td>
+<td>{{emp.age}}</td>
+<td>{{emp.mess}}</td>
+
+<td>
+
+<span class="badge bg-warning">{{emp.behaviour}}</span>
+
+</td>
+
+<td>
+
+<div class="form-check form-switch">
+
+<input class="form-check-input" type="checkbox" [checked]="emp.present" >
+
+</div>
+
+</td>
+<td>
+   <button  (click)="onEdit(emp)" class="btn btn-sm btn-outline-primary me-2">
+    <i class="fa-solid fa-pen-to-square"></i> Edit
+  </button>
+   <button (click)="deletEmp(emp.id)" class="btn btn-sm btn-outline-danger">
+    <i class="fa-solid fa-trash"></i> Delete
+  </button>
+
+</td>
+
+
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>

@@ -1,0 +1,17 @@
+.parent{
+background: linear-gradient(135deg,#0d6efd,#0dcaf0);
+height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+}
+
+.auth-card{
+width:100%;
+max-width:450px;
+border-radius:15px;
+}
+
+.nav-pills .nav-link.active{
+background-color:#0d6efd;
+}

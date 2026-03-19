@@ -1,0 +1,220 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Admin User",
+      "email": "admin@gmail.com",
+      "password": "123456",
+      "role": "admin"
+    },
+    {
+      "id": 2,
+      "name": "Mess Manager",
+      "email": "manager@gmail.com",
+      "password": "123456",
+      "role": "manager"
+    },
+    {
+      "id": 3,
+      "name": "Rahul",
+      "email": "rahul@gmail.com",
+      "password": "123456",
+      "role": "student"
+    },
+    {
+      "id": 4,
+      "name": "Ramesh",
+      "email": "ramesh@gmail.com",
+      "password": "123456",
+      "role": "employee"
+    }
+  ],
+
+  "mess": [
+    {
+      "id": 1,
+      "name": "Mess A",
+      "status": "Open",
+      "location": "Block A",
+      "students": 120,
+      "employees": 6,
+      "complaints": 3
+    },
+    {
+      "id": 2,
+      "name": "Mess B",
+      "status": "Closed",
+      "location": "Block B",
+      "students": 80,
+      "employees": 4,
+      "complaints": 1
+    },
+    {
+      "id": 3,
+      "name": "Mess C",
+      "status": "Under Rework",
+      "location": "Block C",
+      "students": 50,
+      "employees": 3,
+      "complaints": 0
+    }
+  ],
+
+
+ "createMess":{
+  "result":"true",
+  "message":"Mess is created successfully"
+ } ,
+ "UpdateMess":{
+  "result":"true",
+  "message":"Mess is Updated successfully"
+ } ,
+ "DeleteMess":{
+  "result":"true",
+  "message":"Mess is Deleted successfully"
+ } ,
+
+
+  "students": [
+    {
+      "id": 1,
+      "name": "Rahul",
+      "photo": "https://img.freepik.com/free-photo/closeup-shot-beautiful-butterfly-with-interesting-textures-orange-petaled-flower_181624-7640.jpg?semt=ais_hybrid&w=740&q=80",
+      "rollNo": 101,
+      "class": "10A",
+      "state": "Available",
+      "behaviour": 8,
+      "mess": " Mess A",
+      "eatingDays": 120,
+      "joiningDate": "2025-01-10",
+      "cameToday": true
+    },
+    {
+      "id": 2,
+      "name": "Aman",
+      "photo": "https://t3.ftcdn.net/jpg/17/83/64/44/360_F_1783644427_Uanf2gj3s8SiQDnJ58ImTsAT3uUl6MhP.jpg",
+      "rollNo": 102,
+      "class": "10B",
+      "state": "On Leave",
+      "behaviour": 7,
+      "mess": "Mess B",
+      "eatingDays": 90,
+      "joiningDate": "2025-02-15",
+      "cameToday": false
+    },
+    {
+      "id": 3,
+      "name": "Neha",
+      "photo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgolBdeaXdt7hZ4G28YiA8shOCg4jkBg08uA&s",
+      "rollNo": 103,
+      "class": "9A",
+      "state": "Available",
+      "behaviour": 9,
+      "mess": " Mess C",
+      "eatingDays": 110,
+      "joiningDate": "2025-03-01",
+      "cameToday": true
+    }
+  ],
+
+  "createStudent":[
+    {
+      "result":"false",
+      "message":" usee successfully created"
+    }
+  ],
+
+  "deletStudent":[
+    {
+      "result":"false",
+      "message":" usee successfully deleted"
+    }
+  ],
+  "updateStudent":[
+    {
+      "result":"false",
+      "message":" usee successfully updated"
+    }
+  ],
+
+  "employees": [
+    {
+      "id": 1,
+      "name": "Ramesh",
+      "age": 35,
+      "image": "https://www.shutterstock.com/image-photo/photo-adorable-young-happy-boy-260nw-793041598.jpg",
+      "mess": "Mess A",
+      "behaviour": 9,
+      "joiningDate": "2024-12-01",
+      "present": true
+    },
+    {
+      "id": 2,
+      "name": "Suresh",
+      "age": 40,
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0ZP9zTf75vBmTD9BJWQmf3DjamXGuvzw44w&s",
+      "mess": "Mess C",
+      "behaviour": 8,
+      "joiningDate": "2024-11-15",
+      "present": false
+    },
+    {
+      "id": 3,
+      "name": "Mahesh",
+      "age": 30,
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUaCe5knDPnd0Ir44ez_1OgloCsnb1lbiGVw&s",
+      "mess": "Mess B",
+      "behaviour": 7,
+      "joiningDate": "2025-01-10",
+      "present": true
+    }
+  ],
+
+
+  "createEmployee":{
+    "result":"true",
+    "message":" user is created successfully"
+  },
+  "UpdateEmployee":{
+    "result":"true",
+    "message":" user is updated successfully"
+  },
+  "DeletEmployee":{
+    "result":"true",
+    "message":" user is deleted successfully"
+  },
+
+
+
+  "complaints": [
+    {
+      "id": "C101",
+      "studentName": "Rahul",
+      "messId": 1,
+      "type": "Food Quality",
+      "description": "Food was cold",
+      "date": "2026-03-10",
+      "status": "Pending"
+    },
+    {
+      "id": "C102",
+      "studentName": "Aman",
+      "messId": 2,
+      "type": "Cleanliness",
+      "description": "Tables not clean",
+      "date": "2026-03-11",
+      "status": "Resolved"
+    }
+  ],
+
+  "attendance": [
+    {
+      "messId": 1,
+      "last30Days": [
+        90, 85, 100, 95, 110, 105, 98, 102, 97, 93,
+        88, 91, 94, 96, 99, 101, 104, 107, 109, 111,
+        113, 115, 112, 108, 106, 103, 100, 98, 95, 92
+      ]
+    }
+  ]
+}

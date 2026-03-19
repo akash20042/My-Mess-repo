@@ -1,0 +1,323 @@
+<div class="parent">
+
+<div class="container py-5">
+
+<h2 class="page-title">
+
+<i class="fa-solid fa-user-graduate"></i>
+
+Student Management
+
+</h2>
+
+
+<div class="row g-4">
+
+<div class="col-2">
+ <button class="btn btn-sm btn-success" (click)="viewList=!viewList" >{{ viewList? 'new': 'List'}}</button>
+</div>
+
+<!-- Student Registration Form -->
+
+<div *ngIf="!viewList" class="col-md-8">
+
+<div class="card card-box p-4">
+
+<h5>
+
+<i class="fa-solid fa-user-plus"></i>
+
+Register Student
+
+</h5>
+
+<hr>
+
+<form>
+
+<div class="mb-3">
+
+<label class="form-label">Student Name</label>
+
+<input name="name" [(ngModel)]="registerObj.name" type="text" class="form-control">
+
+</div>
+
+
+<div class="mb-3">
+
+<label class="form-label">Photo URL</label>
+
+<input name="photo" [(ngModel)]="registerObj.photo" type="text" class="form-control">
+
+</div>
+
+
+<div class="mb-3">
+
+<label class="form-label">Roll Number</label>
+
+<input name="rollNUmber" [(ngModel)]="registerObj.rollNo" type="text" class="form-control">
+
+</div>
+
+
+<div class="mb-3">
+
+<label class="form-label">Class</label>
+
+<input name="class" [(ngModel)]="registerObj.class" type="text" class="form-control">
+
+</div>
+
+
+<div class="mb-3">
+
+<label class="form-label">State</label>
+
+<select name="state" [(ngModel)]="registerObj.state"  class="form-control">
+
+<option>Available</option>
+<option>On Leave</option>
+
+</select>
+
+</div>
+
+
+<div class="mb-3">
+
+<label class="form-label">
+
+Behaviour Rating (1-10)
+
+</label>
+
+<input name="behaviour" [(ngModel)]="registerObj.behaviour" type="range" class="form-range" min="1" max="10">
+
+</div>
+
+
+<div class="mb-3">
+
+<label class="form-label">Mess Assigned</label>
+
+<select name="mess" [(ngModel)]="registerObj.mess" class="form-control">
+
+<option value="Mess A" >Mess A</option>
+<option value="Mess B" >Mess B</option>
+<option value="Mess C" >Mess C</option>
+
+</select>
+
+</div>
+
+
+<div class="mb-3">
+
+<label class="form-label">
+
+Total Eating Days This Year
+
+</label>
+
+<input name="eatingDays" [(ngModel)]="registerObj.eatingDays" type="number" class="form-control">
+
+</div>
+
+
+<div class="mb-3">
+
+<label class="form-label">Joining Date</label>
+
+<input name="Joining Date" [(ngModel)]="registerObj.joiningDate" type="date" class="form-control">
+
+</div>
+
+--{{registerObj.id}}
+@if(registerObj.id==0){
+<button type="button" (click)="createStudent()" class="btn btn-primary w-100">
+
+<i class="fa fa-save"></i>
+
+Register Student
+</button>
+}@else {
+<button type="button" (click)="updataStudent()" class="btn btn-primary w-100">
+
+<i class="fa fa-save"></i>
+
+update Student
+
+</button> }
+
+</form>
+
+</div>
+
+</div>
+
+
+<!-- Student Table -->
+
+<div *ngIf="viewList" class="col-md-12">
+
+<div class="card table-card p-4">
+
+<h5>
+
+<i class="fa-solid fa-users"></i>
+
+Student List
+
+</h5>
+
+<hr>
+
+<table class="table table-hover">
+
+<thead>
+
+<tr>
+
+<th>Photo</th>
+<th>Name</th>
+<th>Roll No</th>
+<th>Class</th>
+<th>Mess</th>
+<th>Behaviour</th>
+<th>Ate Today</th>
+<th>Action</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td>
+
+<img src="https://randomuser.me/api/portraits/men/1.jpg" class="student-img">
+
+</td>
+
+<td>Rahul</td>
+<td>101</td>
+<td>10A</td>
+<td>Mess A</td>
+<td>
+
+<span class="badge bg-success">8</span>
+
+</td>
+
+<td>
+
+<div class="form-check form-switch">
+
+<input class="form-check-input" type="checkbox">
+
+</div>
+
+</td>
+
+<td>
+   <button  class="btn btn-sm btn-outline-primary me-2">
+    <i class="fa-solid fa-pen-to-square"></i> Edit
+  </button>
+   <button  class="btn btn-sm btn-outline-danger">
+    <i class="fa-solid fa-trash"></i> Delete
+  </button>
+
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+
+<img src="https://randomuser.me/api/portraits/men/2.jpg" class="student-img">
+
+</td>
+
+<td>Aman</td>
+<td>102</td>
+<td>10B</td>
+<td>Mess B</td>
+
+<td>
+
+<span class="badge bg-warning">7</span>
+
+</td>
+
+<td>
+
+<div class="form-check form-switch">
+<input class="form-check-input" type="checkbox" checked>
+</div>
+
+</td>
+
+<td>
+   <button  class="btn btn-sm btn-outline-primary me-2">
+    <i class="fa-solid fa-pen-to-square"></i> Edit
+  </button>
+   <button  class="btn btn-sm btn-outline-danger">
+    <i class="fa-solid fa-trash"></i> Delete
+  </button>
+
+</td>
+
+</tr>
+
+ <tr *ngFor="let user of data">
+
+<td>
+      <img src={{user.photo}} class="student-img">
+</td>
+ <td>{{user.name}} </td>
+  <td>{{user.rollNo}} </td>
+  <td>{{user.class}} </td>
+  <td>{{user.mess}} </td>
+  <td><span class="badge bg-success">{{user.behaviour}}</span>
+ </td>
+
+<td>
+
+<div class="form-check form-switch">
+<input class="form-check-input"  name="ate" value="" type="checkbox" checked>
+</div>
+
+</td>
+
+  <td>
+    <button (click)="onEdit(user)" class="btn btn-sm btn-outline-primary me-2">
+      <i class="fa-solid fa-pen-to-square"></i> Edit
+    </button>
+    <button (click)="deletStudent(user.id)" class="btn btn-sm btn-outline-danger">
+      <i class="fa-solid fa-trash"></i> Delete
+    </button>
+
+  </td>
+
+
+ </tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
