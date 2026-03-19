@@ -101,10 +101,4 @@ My-Mess-repo/
 
 ---
 
-# # 🍽️ Mess Management System
-
-A full-stack Mess Management System built with **Angular (Frontend)** and **Node.js + Express (Backend)** using **MongoDB** as the database.
-
----
-
 
